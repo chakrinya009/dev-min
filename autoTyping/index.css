@@ -1,0 +1,64 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  background: black;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container {
+  display: inline-flex;
+}
+.container .static {
+  font-weight: 400;
+  font-size: 60px;
+  color: #fff;
+}
+.container .dynamic {
+    margin-left: 15px;
+    height: 90px;
+    line-height: 90px;
+    overflow: hidden;
+}
+.dynamic li {
+  color: aqua;
+  font-size: 60px;
+  list-style: none;
+  font-weight: 500;
+  position: relative;
+  top:0;
+  animation: slide 6s steps(4) infinite;
+}
+@keyframes slide{
+    100%{
+       top: -360px;
+    }
+}
+.dynamic li span{
+    position: relative;
+}
+.dynamic li span::after{
+    content:"";
+    position: absolute;
+    left:0;
+    background-color: black;
+    height: 100%;
+    width: 100%;
+    border-left:2px solid aqua;
+    animation: type 2s steps(10) infinite;
+}
+
+@keyframes type{
+    100%{
+        left: 100%;
+        margin:0 -35px 0 35px;
+    }
+}
